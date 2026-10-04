@@ -1,0 +1,145 @@
+{
+ "seed": 0,
+ "sampling": {
+  "50": {
+   "N": [
+    {
+     "k": 1,
+     "coverage": 0.8849999904632568,
+     "vote": 0.885,
+     "likelihood": 0.8849999904632568,
+     "checker": 0.885
+    },
+    {
+     "k": 2,
+     "coverage": 0.949999988079071,
+     "vote": 0.905,
+     "likelihood": 0.9399999976158142,
+     "checker": 0.95
+    },
+    {
+     "k": 4,
+     "coverage": 0.9700000286102295,
+     "vote": 0.935,
+     "likelihood": 0.9350000023841858,
+     "checker": 0.97
+    },
+    {
+     "k": 8,
+     "coverage": 0.9750000238418579,
+     "vote": 0.92,
+     "likelihood": 0.9350000023841858,
+     "checker": 0.975
+    },
+    {
+     "k": 16,
+     "coverage": 0.9750000238418579,
+     "vote": 0.92,
+     "likelihood": 0.9350000023841858,
+     "checker": 0.975
+    },
+    {
+     "k": 32,
+     "coverage": 0.9800000190734863,
+     "vote": 0.935,
+     "likelihood": 0.9350000023841858,
+     "checker": 0.98
+    },
+    {
+     "k": 64,
+     "coverage": 1.0,
+     "vote": 0.935,
+     "likelihood": 0.9350000023841858,
+     "checker": 1.0
+    }
+   ],
+   "single": 0.8849999904632568
+  },
+  "100": {
+   "N": [
+    {
+     "k": 1,
+     "coverage": 0.28999999165534973,
+     "vote": 0.29,
+     "likelihood": 0.28999999165534973,
+     "checker": 0.29
+    },
+    {
+     "k": 2,
+     "coverage": 0.4000000059604645,
+     "vote": 0.295,
+     "likelihood": 0.30000001192092896,
+     "checker": 0.29
+    },
+    {
+     "k": 4,
+     "coverage": 0.4950000047683716,
+     "vote": 0.31,
+     "likelihood": 0.3199999928474426,
+     "checker": 0.29
+    },
+    {
+     "k": 8,
+     "coverage": 0.6100000143051147,
+     "vote": 0.295,
+     "likelihood": 0.3449999988079071,
+     "checker": 0.29
+    },
+    {
+     "k": 16,
+     "coverage": 0.6499999761581421,
+     "vote": 0.285,
+     "likelihood": 0.3199999928474426,
+     "checker": 0.29
+    },
+    {
+     "k": 32,
+     "coverage": 0.7099999785423279,
+     "vote": 0.315,
+     "likelihood": 0.3499999940395355,
+     "checker": 0.29
+    },
+    {
+     "k": 64,
+     "coverage": 0.7749999761581421,
+     "vote": 0.31,
+     "likelihood": 0.3449999988079071,
+     "checker": 0.29
+    }
+   ],
+   "single": 0.28999999165534973
+  }
+ },
+ "search": {
+  "200": {
+   "success": 1.0,
+   "checker_calls_per_step": 1.298325,
+   "model_top1_per_step": 0.7726
+  }
+ },
+ "harness": {
+  "200": {
+   "final": 1.0,
+   "calls": 40000
+  },
+  "1000": {
+   "final": 1.0,
+   "calls": 200000
+  }
+ },
+ "workers": {
+  "tables": 1.0,
+  "final_only": 0.275,
+  "sequential_chunks": 1.0,
+  "model_calls_tables": 30,
+  "model_calls_sequential": 10,
+  "serial_rounds_tables": 1,
+  "serial_rounds_sequential": 10
+ },
+ "reliability": {
+  "steps": 20000,
+  "errors": 0,
+  "trace_ok": 1.0
+ },
+ "seconds": 1698
+}

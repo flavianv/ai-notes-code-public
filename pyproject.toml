@@ -1,0 +1,12 @@
+[project]
+name = "tlib"
+version = "0.1.0"
+description = "Code for the AI Notes YouTube channel: transformers from scratch in PyTorch"
+requires-python = ">=3.9"
+dependencies = ["torch"]
+
+[project.optional-dependencies]
+dev = ["pytest", "nbformat", "nbconvert", "ipykernel", "jupytext"]
+
+[tool.setuptools]
+packages = ["tlib"]

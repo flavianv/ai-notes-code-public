@@ -1,0 +1,12 @@
+.venv/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+8 1 {'last': 0.492000013589859, 'all': 0.8184999823570251}
+8 2 {'last': 0.9620000123977661, 'all': 0.9950000047683716}
+8 4 {'last': 0.9919999837875366, 'all': 0.9990000128746033}
+32 1 {'last': 0.34200000762939453, 'all': 0.4389374852180481}
+32 2 {'last': 0.335999995470047, 'all': 0.5902500152587891}
+32 4 {'last': 0.3440000116825104, 'all': 0.6415625214576721}
+128 1 {'last': 0.3499999940395355, 'all': 0.35503125190734863}
+128 2 {'last': 0.30399999022483826, 'all': 0.3853749930858612}
+128 4 {'last': 0.3479999899864197, 'all': 0.4202343821525574}
+depth 0 done
