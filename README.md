@@ -21,6 +21,10 @@ Five episodes, A1–A5, in [`advanced-transformers/`](advanced-transformers/READ
 - Written guide: [Understanding Transformers: what they compute, and what they need](https://flavianv.github.io/articles/understanding-transformers.html)
 - Bonus episode on real LLMs: AbstractGym ([part 1](https://youtu.be/QIBMdjqpPAs), [part 2](https://youtu.be/q38WEwK3fEI)), code in [flavianv/abstractgym-public](https://github.com/flavianv/abstractgym-public)
 
+## Transformer Training Dynamics
+
+One film on how training shapes a Transformer: signals at initialization, gradients through attention, optimizer updates (SGD, AdamW, Muon, Shampoo) and the representations they build. Its NumPy lab, with a test pinning every on-screen number, is in [`training-dynamics/`](training-dynamics/README.md).
+
 ## Run it
 
 ```bash
