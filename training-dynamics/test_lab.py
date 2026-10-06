@@ -38,3 +38,36 @@ def test_spectral_budget():                # chapter 20: same spectral budget, S
     assert [round(v, 6) for v in s["sgd_singular_values"]] == [0.01, 0.001, 0.00001]
     assert [round(v, 6) for v in s["ideal_muon_singular_values"]] == [0.01, 0.01, 0.01]
     assert round(s["linear_change_sgd"], 3) == -1.010 and round(s["linear_change_ideal_muon"], 3) == -1.101
+
+
+E = R["extras"]
+
+
+def test_extras_are_finite():
+    flat = json.dumps(E); assert "NaN" not in flat and "Infinity" not in flat
+
+
+def test_film1_signals():                  # film 1: moments, sums, init, residual variance
+    assert round(E["moments"]["var_3z"], 2) == 9.0 and round(E["sums"]["std_independent"]) == 10
+    assert round(E["init"]["forward_var"], 1) == 1.0 and round(E["init"]["backward_var"], 1) == 4.0
+    assert [round(E["residual"][f"{L}:alpha_1"]) for L in (12, 24, 48)] == [13, 25, 49]
+    assert all(round(E["residual"][f"{L}:alpha_inv_sqrt_L"]) == 2 for L in (12, 24, 48))
+
+
+def test_film1_blocks():                   # film 1: MLP, activations, QK-norm
+    m = E["mlp"]; assert m["mlp_share"] == 2 / 3 and m["kv_error"] < 1e-14 and round(m["active_fraction"], 2) == 0.50 and m["dead_value_grad_max"] == 0
+    a = E["activations"]; assert round(a["gelu_prime_m1"], 2) == -0.08 and round(a["silu_prime_m1"], 2) == 0.07 and a["swiglu_weights"] == a["classic_weights"]
+    q = E["qk_norm"]; assert round(q["raw_max_grown"] / q["raw_max"]) == 100 and abs(q["qknorm_max_grown"] - q["qknorm_max"]) < 1e-9 and q["qknorm_max"] <= q["g"]
+
+
+def test_film2_step():                     # film 2: objective example, RMSProp, schedules, batch, QK-Clip
+    o = E["objective"]; assert round(o["loss"], 2) == 0.44 and round(o["grad"][0], 2) == -0.36
+    r = E["rmsprop_first_step"]; assert round(r["rmsprop"], 1) == 31.6 and round(r["adam_corrected"], 6) == 1.0
+    s = E["schedules"]; assert round(s["final_loss_constant"], 3) == 0.060 and round(s["final_loss_wsd"], 3) == 0.009
+    assert s["steps_to_target_by_batch"]["1"] == 3000 and s["steps_to_target_by_batch"]["1024"] == 10
+    assert all(abs(v - 100) < 1e-9 for v in E["qk_clip"]["s_max_after"])
+
+
+def test_film3():                          # film 3: implicit bias, delta rule
+    b = E["implicit_bias"]; assert b["residual"] < 1e-12 and b["dist_to_pinv"] < 1e-12 and b["norm_gd"] < b["norm_other_fit"]
+    assert all(v["delta"] < v["additive"] for v in E["delta_rule"].values())
