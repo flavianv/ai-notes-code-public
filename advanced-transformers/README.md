@@ -4,7 +4,7 @@ Code for the advanced follow-up to *Intro to Transformers* on the AI Notes chann
 
 - Videos: [the playlist](https://www.youtube.com/playlist?list=PLSQN85XNghpY)
 - Written guide: [Understanding Transformers: what they compute, and what they need](https://flavianv.github.io/articles/understanding-transformers.html)
-- Bonus episode on real LLMs: [AbstractGym](https://www.youtube.com/watch?v=wmclSPZ40ro), code in [flavianv/abstractgym-public](https://github.com/flavianv/abstractgym-public)
+- Bonus episode on real LLMs: AbstractGym ([part 1](https://youtu.be/QIBMdjqpPAs), [part 2](https://youtu.be/q38WEwK3fEI)), code in [flavianv/abstractgym-public](https://github.com/flavianv/abstractgym-public)
 
 It builds on `tlib` (the intro series' GPT, attention and RoPE in the repo root): install the repo once with `pip install -e ".[dev]"`.
 

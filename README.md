@@ -19,7 +19,7 @@ Five episodes, A1–A5, in [`advanced-transformers/`](advanced-transformers/READ
 
 - Videos: [the playlist](https://www.youtube.com/playlist?list=PLSQN85XNghpY)
 - Written guide: [Understanding Transformers: what they compute, and what they need](https://flavianv.github.io/articles/understanding-transformers.html)
-- Bonus episode on real LLMs: [AbstractGym](https://www.youtube.com/watch?v=wmclSPZ40ro), code in [flavianv/abstractgym-public](https://github.com/flavianv/abstractgym-public)
+- Bonus episode on real LLMs: AbstractGym ([part 1](https://youtu.be/QIBMdjqpPAs), [part 2](https://youtu.be/q38WEwK3fEI)), code in [flavianv/abstractgym-public](https://github.com/flavianv/abstractgym-public)
 
 ## Run it
 
