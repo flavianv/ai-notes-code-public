@@ -1,0 +1,65 @@
+{
+ "leakage": {
+  "fixed_per_test": {
+   "reward_last200": 1.0,
+   "true_accuracy_end": 0.108,
+   "reward_at_100": 1.0,
+   "acc_at_100": 0.108
+  },
+  "fixed_one_bit": {
+   "reward_last200": 0.0,
+   "true_accuracy_end": 0.098,
+   "reward_at_100": 0.0,
+   "acc_at_100": 0.096
+  },
+  "fresh_per_test": {
+   "reward_last200": 0.5285,
+   "true_accuracy_end": 0.535,
+   "reward_at_100": 0.12,
+   "acc_at_100": 0.101
+  }
+ },
+ "spot": {
+  "5": {
+   "slip_through": 0.5912999999999999,
+   "analytic": 0.5904900000000001
+  },
+  "20": {
+   "slip_through": 0.12314999999999998,
+   "analytic": 0.12157665459056935
+  },
+  "50": {
+   "slip_through": 0.0049000000000000155,
+   "analytic": 0.00515377520732012
+  }
+ },
+ "replan": [
+  1.5000000000000002,
+  6.305377999999986,
+  7.875553999999998
+ ],
+ "pessimism": {
+  "0": 1.5441000000000005,
+  "2": 6.579850000000001,
+  "5": 7.8102,
+  "10": 7.8102,
+  "20": 7.8102
+ },
+ "shaping": {
+  "phi": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "sum": 4,
+  "end_minus_start": 4
+ },
+ "decoupled": {
+  "ordinary_push": 5,
+  "ordinary_collect": 1,
+  "asked_collect_after_push": 6,
+  "asked_push_after_push": 5
+ }
+}

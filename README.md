@@ -25,6 +25,10 @@ Five episodes, A1–A5, in [`advanced-transformers/`](advanced-transformers/READ
 
 One film on how training shapes a Transformer: signals at initialization, gradients through attention, optimizer updates (SGD, AdamW, Muon, Shampoo) and the representations they build. Its NumPy lab, with a test pinning every on-screen number, is in [`training-dynamics/`](training-dynamics/README.md).
 
+## Fighting reward hacking
+
+Eight films: what reward hacking is, six methods against it (check actual success, set criteria in advance, vary hidden challenges, discount uncertain scores, train on attempted cheats, limit optimization pressure), and how to build secure RL environments. Every toy number in the films is computed in [`reward-hacking/`](reward-hacking/README.md), with a test pinning each one.
+
 ## Run it
 
 ```bash

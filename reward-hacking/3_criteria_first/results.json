@@ -1,0 +1,89 @@
+{
+ "pass_one": {
+  "fixed": 0.1,
+  "adaptive_formula": 0.6513215599,
+  "m": 10,
+  "r": 0.1
+ },
+ "N": [
+  1,
+  4,
+  16,
+  64
+ ],
+ "adaptive": [
+  {
+   "wrong_accepted": 0.4544,
+   "correct": 0.3,
+   "accepted": 0.7544
+  },
+  {
+   "wrong_accepted": 0.602075,
+   "correct": 0.39455,
+   "accepted": 0.996625
+  },
+  {
+   "wrong_accepted": 0.601325,
+   "correct": 0.398675,
+   "accepted": 1.0
+  },
+  {
+   "wrong_accepted": 0.602575,
+   "correct": 0.397425,
+   "accepted": 1.0
+  }
+ ],
+ "fixed": [
+  {
+   "wrong_accepted": 0.06995,
+   "correct": 0.3,
+   "accepted": 0.36995
+  },
+  {
+   "wrong_accepted": 0.1611,
+   "correct": 0.681775,
+   "accepted": 0.842875
+  },
+  {
+   "wrong_accepted": 0.188475,
+   "correct": 0.81085,
+   "accepted": 0.999325
+  },
+  {
+   "wrong_accepted": 0.188175,
+   "correct": 0.811825,
+   "accepted": 1.0
+  }
+ ],
+ "by_m": {
+  "1": {
+   "wrong_accepted": 0.190625,
+   "correct": 0.808775,
+   "accepted": 0.9994
+  },
+  "2": {
+   "wrong_accepted": 0.309125,
+   "correct": 0.69075,
+   "accepted": 0.999875
+  },
+  "3": {
+   "wrong_accepted": 0.3866,
+   "correct": 0.6134,
+   "accepted": 1.0
+  },
+  "5": {
+   "wrong_accepted": 0.49025,
+   "correct": 0.50975,
+   "accepted": 1.0
+  },
+  "10": {
+   "wrong_accepted": 0.601325,
+   "correct": 0.398675,
+   "accepted": 1.0
+  }
+ },
+ "share_formula": {
+  "fixed": 0.18918918918918917,
+  "adaptive": 0.6031352799335565
+ }
+}

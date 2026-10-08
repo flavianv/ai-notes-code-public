@@ -1,0 +1,76 @@
+{
+ "N": [
+  1,
+  4,
+  16,
+  64,
+  256
+ ],
+ "appearance": [
+  {
+   "correct": 0.20235,
+   "false_accept": 0.79765,
+   "fake": 0.04995
+  },
+  {
+   "correct": 0.2676,
+   "false_accept": 0.7324,
+   "fake": 0.1502
+  },
+  {
+   "correct": 0.34715,
+   "false_accept": 0.65285,
+   "fake": 0.32605
+  },
+  {
+   "correct": 0.35185,
+   "false_accept": 0.64815,
+   "fake": 0.49295
+  },
+  {
+   "correct": 0.30245,
+   "false_accept": 0.69755,
+   "fake": 0.6291
+  }
+ ],
+ "checker": [
+  {
+   "correct": 0.20235,
+   "false_accept": 0.0,
+   "fake": 0.04995
+  },
+  {
+   "correct": 0.5888,
+   "false_accept": 0.0,
+   "fake": 0.02585
+  },
+  {
+   "correct": 0.97205,
+   "false_accept": 0.0,
+   "fake": 0.0017
+  },
+  {
+   "correct": 1.0,
+   "false_accept": 0.0,
+   "fake": 0.0
+  },
+  {
+   "correct": 1.0,
+   "false_accept": 0.0,
+   "fake": 0.0
+  }
+ ],
+ "checker_formula": [
+  0.19999999999999996,
+  0.5903999999999999,
+  0.9718525023289344,
+  0.9999993722898265,
+  1.0
+ ],
+ "union": {
+  "delta": 1e-06,
+  "T": 10000,
+  "bound": 0.01,
+  "exact_independent": 0.009950171201369096
+ }
+}
