@@ -7,7 +7,7 @@ The gradient says which way each weight should move. The update decides how far,
 Every number in the film is computed or measured by a script you can rerun (NumPy, CPU), and each spoken number is asserted against the script before the voice-over is generated.
 
 What is derived or checked:
-- The parabola: stable only below eta < 2/h, and a toy network at the edge of stability
+- The parabola: a step is stable only while eta times h is below 2, and a toy network at the edge of stability
 - Momentum: steady directions add up, noisy ones cancel
 - RMSProp: a scale for every coordinate
 - Adam: bias correction, 31.6x against 1.0 on the first step; AdamW decoupled decay
@@ -26,7 +26,7 @@ What is derived or checked:
 1:29 The size of the step
 4:40 Momentum
 7:09 RMSProp
-9:46 Adam and adamw
+9:46 Adam and AdamW
 13:13 The guards
 16:01 Precision
 18:54 Schedules
@@ -34,7 +34,7 @@ What is derived or checked:
 23:52 Matrix updates
 25:53 Muon
 30:00 Shampoo
-32:30 Qk-clip
+32:30 QK-Clip
 35:08 The whole loop
 36:20 Key references
 
@@ -55,6 +55,6 @@ What is derived or checked:
 
 ## Code
 
-`transformer-training-dynamics/v2/f2b/lab.py` (results in `results.json`), `make_narration.py` (asserts every spoken number), `scenes*.part.js` (the film), in github.com/flavianv/ai_tutorials.
+https://github.com/flavianv/ai-notes-code-public/tree/main/training-dynamics/films/f2b  (`lab.py` computes every number, `results.json` holds them, `make_narration.py` checks every spoken number against them; run `sh training-dynamics/run_checks.sh`).
 
 Series: AI Notes · Transformer Training Dynamics (1 trainable at step zero · 2A gradients, module by module · 2B optimization tricks · 3 thousands of steps).
