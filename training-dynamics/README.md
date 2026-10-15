@@ -8,9 +8,9 @@ Code behind the AI Notes series *Transformer Training Dynamics*: four films (1, 
 | `films/f2a` | Film 2A, *Gradients, module by module*: the loss, a linear layer, shared matrices, embeddings, residuals, norms, MLP, attention, routes |
 | `films/f2b` | Film 2B, *Optimization tricks*: step size and the edge of stability, momentum, RMSProp, Adam/AdamW, guards, precision, schedules, batch size, Muon, Shampoo, QK-Clip |
 | `films/f2` | only `results.json` of the earlier single-film version of film 2, kept because film 3's lab gathers its derivation checks |
-| `films/f3` | Film 3, *Thousands of steps*: what accumulates in training, circuits, grokking, scale, linear and delta attention |
+| `films/f3` | Film 3, *What training builds, and what scale changes*: an opener plus seven stops (induction circuit, relations and memory, attention as memory, scaling laws, mu-P, grokking, the 2026 frontier models); this folder holds the grokking/double-descent lab and the film's `youtube.md` |
 | `grokking/` | the PyTorch grokking runs (modular addition mod 97) that film 3 reads |
-| `parts/` | labs of the short parts that have their own experiments: 12 induction heads (reads the A1 results), 13 relations and outer-product memory, 15 mu-P, 16 scaling laws, 17 attention as memory, 18 frontier models (`facts.json` with sources) |
+| `parts/` | labs of the short parts that have their own experiments: 12 induction heads (reads the A1 results), 13 relations and outer-product memory, 14 grokking (numbers from `films/f3`), 15 mu-P, 16 scaling laws, 17 attention as memory, 18 frontier models (`facts.json` with sources) |
 
 Each film or part folder has `lab.py` (computes the numbers), `results.json` (its output), `make_narration.py` (checks every spoken number against `results.json`), `script.md` (the voice-over) and `youtube.md`.
 

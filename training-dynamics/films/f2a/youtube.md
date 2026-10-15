@@ -39,6 +39,6 @@ What is derived or checked:
 
 ## Code
 
-https://github.com/flavianv/ai-notes-code-public/tree/main/training-dynamics/films/f2a  (`lab.py` computes every number, `results.json` holds them, `make_narration.py` checks every spoken number against them; run `sh training-dynamics/run_checks.sh`).
+`transformer-training-dynamics/v2/f2a/lab.py` (results in `results.json`), `make_narration.py` (asserts every spoken number), `scenes*.part.js` (the film), in github.com/flavianv/ai_tutorials.
 
 Series: AI Notes · Transformer Training Dynamics (1 trainable at step zero · 2A gradients, module by module · 2B optimization tricks · 3 thousands of steps).
