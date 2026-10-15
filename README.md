@@ -23,7 +23,7 @@ Five episodes, A1–A5, in [`advanced-transformers/`](advanced-transformers/READ
 
 ## Transformer Training Dynamics
 
-One film on how training shapes a Transformer: signals at initialization, gradients through attention, optimizer updates (SGD, AdamW, Muon, Shampoo) and the representations they build. Its NumPy lab, with a test pinning every on-screen number, is in [`training-dynamics/`](training-dynamics/README.md).
+Four films on how training shapes a Transformer: signals at initialization (film 1), gradients module by module (2A), optimization tricks: Adam, schedules, precision, Muon, Shampoo (2B), and what accumulates over thousands of steps (3), plus a set of short standalone parts. Every number on screen is computed by a NumPy lab, and each narration is checked against the saved results. See [`training-dynamics/`](training-dynamics/README.md).
 
 ## Fighting reward hacking
 

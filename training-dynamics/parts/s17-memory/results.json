@@ -1,0 +1,90 @@
+{
+ "collision": {
+  "additive_read": [
+   1.0,
+   1.0
+  ],
+  "delta_read_before": [
+   1.0,
+   0.0
+  ],
+  "delta_error": [
+   -1.0,
+   1.0
+  ],
+  "delta_read_after": [
+   0.0,
+   1.0
+  ]
+ },
+ "linear": {
+  "T": 12,
+  "d": 8,
+  "pairwise_vs_recurrent": 1.6653345369377348e-16,
+  "state_entries": 72,
+  "cost": {
+   "N": 4096,
+   "m": 64,
+   "pairwise_madds": 2147483648,
+   "recurrent_madds": 33554432,
+   "ratio": 64.0
+  }
+ },
+ "delta_norm_max": 1.0000000000000009,
+ "capacity": {
+  "width": 64,
+  "beta_softmax": 30.0,
+  "rows": [
+   {
+    "pairs": 16,
+    "softmax": 3.0131827720163603e-10,
+    "additive": 0.4741836324293106,
+    "delta": 0.325872603637422,
+    "gated_delta": 0.3643447823894094
+   },
+   {
+    "pairs": 32,
+    "softmax": 1.4349731883320137e-09,
+    "additive": 0.6940363247559522,
+    "delta": 0.48967350928343734,
+    "gated_delta": 0.5396186959096732
+   },
+   {
+    "pairs": 64,
+    "softmax": 4.126612258319946e-09,
+    "additive": 0.9846399612301273,
+    "delta": 0.7240430423853228,
+    "gated_delta": 0.7530523448958526
+   },
+   {
+    "pairs": 96,
+    "softmax": 6.455412900885636e-09,
+    "additive": 1.2267689270271673,
+    "delta": 0.8916947256123287,
+    "gated_delta": 0.8704775159067356
+   },
+   {
+    "pairs": 128,
+    "softmax": 1.0704954857801928e-08,
+    "additive": 1.4149505874080497,
+    "delta": 0.9896135582892572,
+    "gated_delta": 0.9294397221588255
+   }
+  ]
+ },
+ "state": {
+  "fixed": 4096,
+  "kv_cache": {
+   "16": 2048,
+   "64": 8192,
+   "128": 16384,
+   "4096": 524288
+  }
+ },
+ "delta_checks": {
+  "overwrite_error": 8.881784197001252e-16,
+  "gradient_step_error": 0.0,
+  "chunk_vs_recurrent": 1.7763568394002505e-15,
+  "two_chunk_chain": 1.4432899320127035e-15
+ }
+}

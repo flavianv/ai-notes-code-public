@@ -1,0 +1,6 @@
+{
+ "as_of": "2026-10",
+ "kimi_k3": {"source": "Kimi Team (2026), Kimi K3: Open Frontier Intelligence, arXiv:2607.24653, abstract and Sections 2.1, 2.2, 2.5, 3.2, 3.3, Table 1", "params_total_T": 2.8, "params_active_B": 104, "experts_active": 16, "experts_total": 896, "context_tokens_M": 1, "layers": 93, "kda_layers": 69, "mla_layers": 24, "block": "3 KDA layers then 1 gated MLA layer", "scaling_efficiency_vs_k2": 2.5, "k2_layers": 61, "optimizer": "per-head Muon, with the weight-clipping mechanism introduced in Kimi K2"},
+ "kimi_k2": {"source": "Kimi Team (2025), Kimi K2: Open Agentic Intelligence, arXiv:2507.20534", "qk_clip_tau": 100, "tokens_T": 15.5},
+ "kimi_linear": {"source": "Kimi Team (2025), Kimi Linear, arXiv:2510.26692", "ratio": "3 KDA : 1 MLA", "kv_cache_reduction_pct": 75, "decode_speedup": 6, "context_tokens_M": 1}
+}

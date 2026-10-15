@@ -1,25 +1,29 @@
 # Transformer Training Dynamics
 
-Code for the AI Notes film *Transformer Training Dynamics*: signals, gradients, updates and representations in a Transformer. Every lab number shown in the film is computed here.
+Code behind the AI Notes series *Transformer Training Dynamics*: four films (1, 2A, 2B, 3) and a set of short standalone parts. Every number shown on screen comes from a lab script here, and the narration builder asserts every spoken number against the saved results before the voice-over is generated.
+
+| Folder | What |
+|---|---|
+| `films/f1` | Film 1, *Trainable at step zero*: variance, random matrices, attention scaling, softmax and its Jacobian, depth, norms, the MLP as a memory, activations |
+| `films/f2a` | Film 2A, *Gradients, module by module*: the loss, a linear layer, shared matrices, embeddings, residuals, norms, MLP, attention, routes |
+| `films/f2b` | Film 2B, *Optimization tricks*: step size and the edge of stability, momentum, RMSProp, Adam/AdamW, guards, precision, schedules, batch size, Muon, Shampoo, QK-Clip |
+| `films/f2` | only `results.json` of the earlier single-film version of film 2, kept because film 3's lab gathers its derivation checks |
+| `films/f3` | Film 3, *Thousands of steps*: what accumulates in training, circuits, grokking, scale, linear and delta attention |
+| `grokking/` | the PyTorch grokking runs (modular addition mod 97) that film 3 reads |
+| `parts/` | labs of the short parts that have their own experiments: 12 induction heads (reads the A1 results), 13 relations and outer-product memory, 15 mu-P, 16 scaling laws, 17 attention as memory, 18 frontier models (`facts.json` with sources) |
+
+Each film or part folder has `lab.py` (computes the numbers), `results.json` (its output), `make_narration.py` (checks every spoken number against `results.json`), `script.md` (the voice-over) and `youtube.md`.
 
 ```bash
-python3 training-dynamics/lab.py        # NumPy only, a few seconds on a CPU; writes results/lab-results.json
-python3 training-dynamics/grokking.py   # PyTorch, a few minutes on a CPU; writes results/grokking.json
-pytest training-dynamics                # pins every on-screen number
+python3 training-dynamics/films/f2b/lab.py            # NumPy only; writes results.json next to it
+cd training-dynamics/films/f2b && python3 make_narration.py   # asserts every spoken number
+sh training-dynamics/run_checks.sh                    # runs every make_narration.py
+python3 training-dynamics/grokking/grokking.py        # PyTorch, a few minutes on a CPU
+pytest training-dynamics/grokking                     # pins the grokking numbers
 ```
 
-What `lab.py` checks (fixed seed 20261006):
-
-| Chapter | Check | Result |
-|---|---|---|
-| 08 Derive the attention scaling | variance of q·k at widths 16–1024, raw / ÷√d / ÷d, 20,000 samples each | raw ≈ d, ÷√d ≈ 1 (e.g. 259 → 1.01 at d = 256) |
-| 12 Backpropagate through attention | hand-written Q, K, V, X gradients against central finite differences, causal mask | max error 2 × 10⁻¹⁰ |
-| 07, 27 | Q/K gauge invariance; permutation equivariance with the mask permuted | 1.1 × 10⁻¹⁶, 5.6 × 10⁻¹⁷ |
-| 13 Why a route gains attention | one gradient step on two logits, values 0 and 2, target 2 | attention 0.475 / 0.525, loss 0.5 → 0.451 |
-| 20 Derive the idealized Muon direction | best step under a spectral-norm budget vs scaled SGD, σ(G) = (100, 10, 0.1) | linear loss change −1.101 vs −1.010 |
-
-The lab also checks the newer chapters: residual variance with depth, the MLP as key–value units (and dead ReLU gradients), GELU/SiLU derivatives, QK-norm and QK-Clip bounds, RMSProp's first step, schedules and batch size on a noisy quadratic, implicit bias of gradient descent, and the delta rule's recall.
-
-`grokking.py` (film 3): a + b mod 97, a small MLP, AdamW, seeds 0–2. With weight decay 1.0, train accuracy passes 99% at step 100 and test accuracy at steps 11,600, 10,600 and 12,000; without weight decay test accuracy ends at 0; with shuffled labels the network still fits the training set and the test stays at chance (≈1%).
-
-These are numerical checks of equations, not language-model benchmarks. The induction-circuit results in chapters 23 and 25 come from the A1 code in [`advanced-transformers/`](../advanced-transformers/README.md) (`tools/run_a1.py induction <seed>`).
+Notes
+- The other short parts of the series (courier, initialization, attention scaling, norms, MLP, learning rate, backprop, Adam, precision, Muon, grokking) reuse the lab results of the films above.
+- `parts/s12-induction/lab.py` re-reads the induction runs saved in `advanced-transformers/results/a1/`; `parts/s16-scaling` trains tiny character models on `shakespeare.txt` (public domain, ~2.5 minutes).
+- `parts/s18-frontier` is a dated snapshot (October 2026): every figure is in `facts.json` with its source.
+- Film 3 reuses two measured sets: the A1 circuits runs (`films/f3/a1_results.json`) and `grokking/results/grokking.json`.
